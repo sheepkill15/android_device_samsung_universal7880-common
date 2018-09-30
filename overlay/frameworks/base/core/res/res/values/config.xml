@@ -224,4 +224,7 @@
 
     <!-- Enable double tap to wake gesture -->
     <bool name="config_supportDoubleTapWake">true</bool>
+    
+    <!-- Enable HW button backlight -->
+    <bool name="config_button_brightness_support">true</bool>
 </resources>
