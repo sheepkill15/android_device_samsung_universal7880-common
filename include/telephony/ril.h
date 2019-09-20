@@ -696,6 +696,8 @@ typedef struct {
     int             toa;         /* "type" from TS 27.007 7.11 */
     char *          number;      /* "number" from TS 27.007 7.11. May be NULL */
     int             timeSeconds; /* for CF no reply only */
+    char *          startTime;   /* SEC addition */
+    char *          endTime;     /* SEC addition */
 }RIL_CallForwardInfo;
 
 typedef struct {
@@ -1919,8 +1921,6 @@ typedef struct {
     int waitTime;
     /* true to enable the profile, 0 to disable, 1 to enable */
     int enabled;
-    char *roamingProtocol;
-    int imsType;
 } RIL_DataProfileInfo;
 
 typedef struct {
@@ -6366,6 +6366,10 @@ typedef struct {
 #define RIL_REQUEST_ENABLE_UNSOL_RESPONSE 10034
 #define RIL_REQUEST_CANCEL_TRANSFER_CALL 10035
 #define RIL_REQUEST_SIM_OPEN_CHANNEL_WITH_P2 10036
+#define RIL_REQUEST_ACKNOWLEDGE_RIL_CONNECTED 10037
+#define RIL_REQUEST_EMERGENCY_SEARCH 10038
+#define RIL_REQUEST_EMERGENCY_CONTROL 10039
+#define RIL_REQUEST_SIM_GET_ATR 10040
 
 /***********************************************************************/
 
