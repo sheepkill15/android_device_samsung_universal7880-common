@@ -83,18 +83,6 @@
         <item>bt-pan</item>
     </string-array>
 
-    <!-- Array of ConnectivityManager.TYPE_xxxx values allowable for tethering -->
-    <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
-    <!== [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
-    <integer-array translatable="false" name="config_tether_upstream_types">
-        <item>0</item>
-        <item>1</item>
-        <item>4</item>
-        <item>5</item>
-        <item>7</item>
-        <item>9</item>
-    </integer-array>
-
     <!-- The default iface on which to monitor data use -->
     <string translatable="false" name="config_datause_iface">rmnet0</string>
 
@@ -154,10 +142,17 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>15</item>
-        <item>150</item>
-        <item>1000</item>
-        <item>5000</item>
+        <item>10</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>
+        <item>500</item>
+        <item>750</item>
+        <item>1100</item>
+        <item>1600</item>
+        <item>4000</item>
+        <item>10000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -165,10 +160,17 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>10</item>
-        <item>80</item>
-        <item>162</item>
-        <item>190</item>
+        <item>20</item>
+        <item>38</item>
+        <item>50</item>
+        <item>65</item>
+        <item>85</item>
+        <item>94</item>
+        <item>110</item>
+        <item>130</item>
+        <item>150</item>
+        <item>196</item>
+        <item>250</item>
         <item>255</item>
     </integer-array>
 
@@ -193,7 +195,7 @@
 
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
-    <bool name="config_dozeAfterScreenOff">true</bool>
+    <bool name="config_dozeAfterScreenOffByDefault">true</bool>
 
     <!-- Whether the always on display mode is available. This should only be enabled
          on devices where the display has been tuned to be power efficient in DOZE and/or
@@ -208,7 +210,7 @@
 
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state. -->
-    <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- If true, the display will be shifted around in ambient mode. -->
     <bool name="config_enableBurnInProtection">true</bool>
@@ -221,5 +223,18 @@
 
     <!-- Enable double tap to wake gesture -->
     <bool name="config_supportDoubleTapWake">true</bool>
-   
+
+    <!-- Values for GPS configuration -->
+    <string-array translatable="false" name="config_gpsParameters">
+        <item>SUPL_HOST=supl.google.com</item>
+        <item>SUPL_PORT=7275</item>
+        <item>SUPL_VER=0x20000</item>
+        <item>SUPL_MODE=1</item>
+        <item>SUPL_ES=0</item>
+        <item>LPP_PROFILE=0</item>
+        <item>USE_EMERGENCY_PDN_FOR_EMERGENCY_SUPL=1</item>
+        <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
+        <item>GPS_LOCK=0</item>
+        <item>XTRA_SERVER_1=http://1.ssiloc.com:80/packed/A03</item>
+    </string-array>
 </resources>

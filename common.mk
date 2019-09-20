@@ -84,7 +84,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.renderscript@1.0-impl \
     gralloc.exynos5 \
-    libhwc2on1adapter \
     memtrack.exynos5
 
 PRODUCT_PACKAGES += \
@@ -100,6 +99,9 @@ PRODUCT_PACKAGES += \
     libexynoscamera_shim \
     libcamera_client_shim \
     libstagefright_shim
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/camera/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -145,12 +147,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/grippower.info:system/etc/firmware/wlan/grippower.info \
     $(LOCAL_PATH)/configs/wifi/qcom_cfg.ini:system/etc/firmware/wlan/qcom_cfg.ini \
-    $(LOCAL_PATH)/configs/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/WCNSS_cfg.dat
+    $(LOCAL_PATH)/configs/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/configs/wifi/indoorchannel.info:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/indoorchannel.info
 
 # WiFi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+
+# Custom wifi service
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/android.hardware.wifi@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.wifi@1.0-service.rc
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0 \
@@ -162,7 +169,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wificond \
     wifilogd \
-    wifiloader \
     wlutil \
     wpa_supplicant \
     wpa_supplicant.conf
@@ -175,7 +181,7 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-sec-hal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-sec-hal.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-sec.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-sec.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     $(LOCAL_PATH)/configs/nfc/nfcee_access.xml:$(TARGET_COPY_OUT_VENDOR)/etc/nfcee_access.xml
 
 PRODUCT_PACKAGES += \
