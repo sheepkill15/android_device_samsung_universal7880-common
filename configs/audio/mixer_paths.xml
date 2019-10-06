@@ -125,7 +125,7 @@
 
 	<path name="dev-speaker">
 		<ctl name="HP HP On" value="0" />
-		<ctl name="EP EP On" value="0" />
+		<ctl name="EP EP On" value="1" />
 		<!-- <ctl name="SPK SPK On" value="1" /> -->
 	</path>
 

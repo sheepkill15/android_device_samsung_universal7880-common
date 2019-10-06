@@ -88,6 +88,7 @@
 /data/misc/conn/\.wifiver\.info    u:object_r:wifi_data_file:s0
 
 /data/misc/radio(/.*)?       u:object_r:radio_data_file:s0
+/data/vendor/display(/.*)?   u:object_r:display_vendor_data_file:s0
 
 # gps
 /data/system/gps(/.*)?      u:object_r:gps_data_file:s0
@@ -118,6 +119,11 @@
 
 # camera
 /sys/devices/virtual/camera(/.*)?           u:object_r:sysfs_camera:s0
+
+# charger
+/sys/devices/battery/power_supply(/.*)                                     u:object_r:sysfs_charger:s0
+/sys/devices/13870000.i2c/i2c-7/7-003d/s2mu004-charger/power_supply(/.*)   u:object_r:sysfs_charger:s0
+/sys/devices/13830000.i2c/i2c-10/10-003b/power_supply(/.*)                 u:object_r:sysfs_charger:s0
 
 # CP device
 /dev/spi_boot_link              u:object_r:radio_device:s0
@@ -162,14 +168,14 @@
 /sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/mdnie_ldu     u:object_r:sysfs_mdnie:s0
 /sys/devices/[0-9]*\.dsim/lcd/panel/mdnie/whiteRGB      u:object_r:sysfs_mdnie:s0
 
+/sys/devices/14830000.decon_fb  u:object_r:sysfs_graphics:s0
+/sys/devices/14800000.dsim      u:object_r:sysfs_graphics:s0
+
 # sec
 /sys/class/sec(/.*)?           -- u:object_r:sysfs_sec:s0
 
 # svc
 /sys/devices/svc(/.*)?    u:object_r:sysfs_svc:s0
-
-# usb
-/sys/devices/13600000.usb(/.*)?                     u:object_r:sysfs_usb:s0
 
 # virtual
 /sys/devices/virtual(/.*)?    u:object_r:sysfs_virtual:s0
@@ -187,3 +193,5 @@
 
 /system/bin/cbd              u:object_r:cpboot-daemon_exec:s0
 /system/bin/gpsd             u:object_r:gpsd_exec:s0
+
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.samsung-exynos    u:object_r:hal_lineage_livedisplay_sysfs_exec:s0

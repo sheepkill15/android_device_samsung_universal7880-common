@@ -49,6 +49,9 @@ allow system_server sysfs_sec:file write;
 allow system_server sysfs_devices_system_cpu:file write;
 allow system_server sysfs_virtual:file write;
 
+# Grpahics sysfs
+allow system_server sysfs_graphics:file rw_file_perms;
+
 # /data/system/gps/xtraee.bin
 allow system_server gps_data_file:file create_file_perms;
 

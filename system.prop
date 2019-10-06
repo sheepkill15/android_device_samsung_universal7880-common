@@ -23,6 +23,23 @@ dalvik.vm.isa.arm64.features=default
 dalvik.vm.isa.arm.variant=cortex-a15
 dalvik.vm.isa.arm.features=default
 
+# Power
+ro.ril.disable.power.collapse=0
+ro.ril.power_collapse=1
+power_supply.wakeup=enable
+ro.mot.eri.losalert.delay=1000
+ro.config.hw_power_saving=1
+pm.sleep_mode=1
+ro.ril.disable.power.collapse=0
+profiler.force_disable_ulog=true
+profiler.force_disable_err_rpt=true
+profiler.force_disable_err_rpt=1
+profiler.force_disable_ulog=1
+ro.vold.umsdirtyratio=20
+dalvik.vm.checkjni=false
+dalvik.vm.execution-mode=int:jit
+video.accelerate.hw=1
+
 # Graphics
 debug.hwc.skip_dma_types=0,2
 ro.opengles.version=196610
@@ -30,6 +47,12 @@ ro.opengles.version=196610
 # Nfc
 ro.nfc.port="I2C"
 ro.nfc.sec_hal=true
+
+# Media
+ro.media.enc.jpeg.quality=100
+ro.media.dec.jpeg.memcap=8000000
+ro.media.enc.hprof.vid.bps=8000000
+ro.media.enc.hprof.vid.fps=65
 
 # Radio
 persist.radio.sib16_support=1
@@ -47,6 +70,7 @@ vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
 
 # SDcardfs
 ro.sys.sdcardfs=false
+#dev.usbsetting.embedded=on
 
 # Wifi
 wifi.interface=wlan0

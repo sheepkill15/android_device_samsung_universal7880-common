@@ -63,7 +63,7 @@ void vendor_load_properties()
     name = device + "xx";
 
     description = name + "-user 7.0 NRD90M " + bl_model + bl_build + " release-keys";
-    fingerprint = "samsung/" + name + "/" + device + ":8.0.0/R16NW/" + bl_model + bl_build + ":user/release-keys";
+    fingerprint = "google/blueline/blueline:9/PQ3A.190505.002/5450365:user/release-keys";
 
     LOG(INFO) << "Found bootloader: %s", bootloader.c_str();
     LOG(INFO) << "Setting ro.product.model: %s", model.c_str();
