@@ -17,6 +17,7 @@ allow init proc:file { getattr setattr read write open };
 allow init cameraserver:process noatsecure;
 allow init hal_fingerprint_default:process noatsecure;
 
+
 # /data
 allow init sdcardd_exec:file r_file_perms;
 
