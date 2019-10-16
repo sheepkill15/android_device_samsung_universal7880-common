@@ -92,3 +92,4 @@ import /efs/factory.prop
 
 # boot device
 #ro.boot.bootdevice=13540000.dwmmc0
+ro.boot.theme=1
