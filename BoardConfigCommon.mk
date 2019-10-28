@@ -229,6 +229,10 @@ TW_USE_TOOLBOX=true
 TW_EXCLUDE_TWRPAPP := true
 endif
 
+# Audio
+# USE_CUSTOM_AUDIO_POLICY := 1
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # Seccomp filters
 BOARD_SECCOMP_POLICY += device/samsung/universal7880-common/seccomp
 
